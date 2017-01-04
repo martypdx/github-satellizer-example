@@ -1,0 +1,35 @@
+:local(.detail) {
+    border-collapse: collapse;
+
+    thead {
+        font-weight: bold;
+
+        td {
+            &.sorted:after {
+                content: '^';
+            }
+
+            &.sorted.desc:after {
+                content: 'v';
+            }
+
+            cursor: pointer;
+        }
+    }
+
+    td {
+        &.ng-leave {
+            transition: opacity .5s ease-in-out;
+        }
+        &.ng-leave-active {
+            opacity: 0;
+        }
+
+    }
+
+    td {
+        opacity: 1;
+        border: 1px solid #aaa;
+        padding: 10px;
+    }
+}

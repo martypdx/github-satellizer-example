@@ -1,0 +1,11 @@
+<header>
+    <nav>
+        <a ui-sref="welcome">welcome</a>
+        <a ui-sref="link">link github</a>
+        <a ng-if="$ctrl.isAuthenticated()" ui-sref="welcome" ng-click="$ctrl.logout()">logout</a>
+    </nav>
+</header>
+
+<main>
+    <ui-view></ui-view>
+</main>

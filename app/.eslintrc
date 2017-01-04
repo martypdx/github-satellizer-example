@@ -1,0 +1,13 @@
+{
+    "globals": {
+        "angular": false,
+        "chai": false
+    },
+    "env": {
+        "node": true,
+        "mocha": true,
+        "es6": true,
+        "protractor": true,
+        "jasmine": true
+    }
+}

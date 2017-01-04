@@ -1,0 +1,9 @@
+
+<ul ng-class="$ctrl.styles.thumbnail">
+    <li ng-repeat="image in $ctrl.images">
+        <img ng-src="{{image.url}}">
+        <div class="title">{{image.title}}</div>
+        <button ng-click="$ctrl.parent.remove(image)">x</button>
+        <button class="twitter" ng-click="$ctrl.parent.tweet(image)">🐦</button>
+    </li>
+</ul>

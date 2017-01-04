@@ -1,0 +1,22 @@
+<section>
+    <header>
+        <h3>{{$ctrl.album.name}}</h3>
+        <button ng-click="$ctrl.removeAlbum()">Delete this album</button>
+    </header>
+
+    <section>
+        <ui-view></ui-view>
+    </section>
+
+    <footer>
+        <h3>Add an image to "{{$ctrl.album.name}}" album</h3>
+        
+        <add-new add="$ctrl.add">
+            <label ng-click="$ctrl.alert()">title</label>
+            <input type="text" ng-model="$ctrl.newImage.title">
+            <label>url</label>
+            <input type="text" ng-model="$ctrl.newImage.url">
+        </add-new>
+
+    </footer>
+</section>

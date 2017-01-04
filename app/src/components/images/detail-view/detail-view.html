@@ -1,0 +1,41 @@
+<!-- these are bound to the "search" object, which is 
+passed to the ng-repeat filter below -->
+title: <input ng-model="search.title">
+url: <input ng-model="search.url">
+{{ search | json }} <!-- this just shows us state of search obj, not user facing -->
+
+<table ng-class="$ctrl.styles.detail">
+    <thead>
+        <tr>
+            <td>index</td>
+            <!-- create a column header for list of props -->
+            <td ng-repeat="prop in ['title', 'url']"
+                x-comment="conditionally add classes based on if this is active sort, and order"
+                ng-class="{ sorted: $ctrl.sort === prop, desc: $ctrl.order }" 
+                x-comment="this calls are order by method on the component controller"
+                ng-click="$ctrl.orderBy(prop)">
+                {{prop}}
+            </td>
+            <td>remove</td>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- create a row for each image 
+                filter is applied search object
+                orderBy applies the sort prop and the asc/desc order
+                track by is ng-repeat construct for managing row add/remove/sort
+        -->
+        <tr ng-repeat="image in $ctrl.images 
+            | filter: search
+            | orderBy: $ctrl.sort:$ctrl.order
+            track by image._id">
+            <td>{{$index}}</td>
+            <!-- use of a custom string display filter -->
+            <td>{{image.title | titleCase}}</td>
+            <td>{{image.url}}</td>
+            <td>
+                <button ng-click="$ctrl.parent.remove(image)">x</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

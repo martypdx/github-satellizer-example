@@ -1,0 +1,15 @@
+:local(.pirate) {
+
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #aaa;
+    
+    label {
+        color: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    }
+}
+
+.inline {
+    display: inline-block;
+}

@@ -1,0 +1,13 @@
+<section ng-class="{ inline: $ctrl.inline }" ng-class="$ctrl.styles.pirate">
+    <form ng-class="{ inline: $ctrl.inline }" ng-submit="$ctrl.submit()">
+            
+        <!--<div ng-class="{ inline: $ctrl.inline }" ng-repeat="field in $ctrl.fields">
+            <label>{{field}}:</label>
+            <input type="text" ng-model="$ctrl.item[field]">
+        </div>-->
+
+        <div ng-class="{ inline: $ctrl.inline }" ng-transclude></div>
+
+        <button class="primary">{{$ctrl.prompt || "add"}}</button>
+    </form>
+</section>
